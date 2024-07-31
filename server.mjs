@@ -2,12 +2,16 @@ import express from 'express';
 import fetch from 'node-fetch';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import dotenv from 'dotenv';
+
+// Load environment variables from .env file
+dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 4000;
-const API_KEY = ''; // Add your API key here
+const API_KEY = process.env.API_KEY; // Use API key from environment variables
 
-app.use(cors()); // Call cors as a function
+app.use(cors());
 app.use(bodyParser.json({
   limit: '0.5mb'
 }));
