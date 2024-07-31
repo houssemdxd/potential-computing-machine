@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
   extended: true 
 }));
 
-app.post('/api/messages', async (req, res) => {
+app.post('https://potential-computing-machine-jund.onrender.com/', async (req, res) => {
   const url = 'https://api.anthropic.com/v1/messages';
   const headers = {
     'Content-Type': 'application/json',
