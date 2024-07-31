@@ -17,6 +17,7 @@ app.use(bodyParser.urlencoded({
   parameterLimit: 100000,
   extended: true 
 }));
+console.log("hello world");
 
 app.post('https://potential-computing-machine-jund.onrender.com/', async (req, res) => {
   const url = 'https://api.anthropic.com/v1/messages';
