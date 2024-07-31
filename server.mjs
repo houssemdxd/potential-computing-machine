@@ -26,6 +26,9 @@ app.post('https://potential-computing-machine-jund.onrender.com/', async (req, r
     'x-api-key': API_KEY,
     'anthropic-version': '2023-06-01',
   };
+  app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
   try {
     const response = await fetch(url, {
