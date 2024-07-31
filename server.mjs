@@ -5,7 +5,7 @@ import cors from 'cors';
 
 const app = express();
 const port = process.env.PORT || 4000;
-const API_KEY = '';
+const API_KEY = ''; // Add your API key here
 
 app.use(cors()); // Call cors as a function
 app.use(bodyParser.json({
@@ -17,18 +17,20 @@ app.use(bodyParser.urlencoded({
   parameterLimit: 100000,
   extended: true 
 }));
-console.log("hello world");
 
-app.post('https://potential-computing-machine-jund.onrender.com/', async (req, res) => {
+// Define a GET route for the root URL
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
+
+// Correct the POST route definition
+app.post('/messages', async (req, res) => {
   const url = 'https://api.anthropic.com/v1/messages';
   const headers = {
     'Content-Type': 'application/json',
     'x-api-key': API_KEY,
     'anthropic-version': '2023-06-01',
   };
-  app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
 
   try {
     const response = await fetch(url, {
